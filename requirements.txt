@@ -1,0 +1,5 @@
+Django==5.2.7
+djangorestframework==3.14.0
+celery==5.3.4
+redis==5.0.1
+python-decouple==3.8
