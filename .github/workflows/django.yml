@@ -12,17 +12,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_NAME: dietplan_db
+      DB_USER: root
+      DB_PASSWORD: ci-password
 
     services:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: Pass@1234
+          # This password exists only inside the temporary CI service.
+          MYSQL_ROOT_PASSWORD: ci-password
           MYSQL_DATABASE: dietplan_db
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -pPass@1234"
+          --health-cmd="mysqladmin ping -h localhost -pci-password"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
@@ -39,16 +46,13 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Run Migrations
-        run: |
-          python manage.py migrate
+        run: python manage.py migrate
 
       - name: Run Django Checks
-        run: |
-          python manage.py check
+        run: python manage.py check
 
       - name: Run Tests
-        run: |
-          python manage.py test
+        run: python manage.py test
