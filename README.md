@@ -140,8 +140,8 @@ Password recovery uses Gmail SMTP. Enable two-step verification on the sender’
 Set the credentials in the same PowerShell session that starts Django:
 
 ```powershell
-$env:NOURISH_EMAIL_HOST_USER="sender@example.com"
-$env:NOURISH_EMAIL_HOST_PASSWORD="your-16-character-app-password"
+$env:NOURISH_EMAIL_HOST_USER="adeshprojectsotp@gmail.com"
+$env:NOURISH_EMAIL_HOST_PASSWORD="16-character-app-password generated"
 python manage.py runserver
 ```
 
