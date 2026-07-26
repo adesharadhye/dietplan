@@ -16,6 +16,14 @@ Nourish is a full-stack meal-planning application built with Django REST Framewo
 - Responsive desktop and mobile design
 - Celery task placeholder for meal reminders
 
+## Project Preview
+
+GitHub does not display PDF files inline inside Markdown. Use the link below to open the complete project preview in GitHub's PDF viewer:
+
+### [View the Diet Plan PDF](screenshots/Diet%20Plan.pdf)
+
+[![Open Diet Plan PDF](https://img.shields.io/badge/Open-Diet%20Plan%20PDF-214c38?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](screenshots/Diet%20Plan.pdf)
+
 ## Technology
 
 ### Backend
