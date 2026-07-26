@@ -209,7 +209,7 @@ celery -A dietplan worker --loglevel=info
 
 ## Security Notes
 
-- Keep `SECRET_KEY`, database passwords and SMTP passwords in environment variables for deployment.
+- Keep `SECRET_KEY`, database passwords, and SMTP passwords in environment variables for deployment.
 - Keep `DEBUG=False` in production.
 - Restrict `ALLOWED_HOSTS` to trusted hostnames.
 - Serve the application over HTTPS.
