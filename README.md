@@ -141,7 +141,11 @@ Set the credentials in the same PowerShell session that starts Django:
 
 ```powershell
 $env:NOURISH_EMAIL_HOST_USER="adeshprojectsotp@gmail.com"
+<<<<<<< HEAD
 $env:NOURISH_EMAIL_HOST_PASSWORD="16-character-app-password generated"
+=======
+$env:NOURISH_EMAIL_HOST_PASSWORD="16-character-app-password"
+>>>>>>> e30bb9c (db moved to supabase)
 python manage.py runserver
 ```
 
