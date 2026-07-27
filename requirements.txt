@@ -2,8 +2,9 @@
 Django==5.2.7
 djangorestframework==3.14.0
 
-# MySQL database driver
-mysqlclient==2.2.7
+# Supabase PostgreSQL configuration and database driver
+python-decouple==3.8
+psycopg2-binary==2.9.11
 
 # Background meal-reminder tasks
 celery==5.3.4

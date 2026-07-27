@@ -13,6 +13,7 @@ __pycache__/
 db.sqlite3
 *.log
 celerybeat-schedule
+staticfiles/
 
 # Editor and operating-system files
 .vscode/
