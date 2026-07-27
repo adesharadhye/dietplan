@@ -28,15 +28,10 @@ SECRET_KEY = config(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default='true').strip().lower() in {
-    '1', 'true', 'yes', 'on', 'debug', 'development',
-}
+DEBUG = False
 
-ALLOWED_HOSTS = config(
-    'ALLOWED_HOSTS',
-    default='127.0.0.1,localhost',
-    cast=lambda value: [host.strip() for host in value.split(',') if host.strip()],
-)
+ALLOWED_HOSTS = ['dietplan-2jgg.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://dietplan-2jgg.onrender.com']
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

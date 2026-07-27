@@ -12,7 +12,9 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_HOSTS
-        value: ".onrender.com"
+        value: "dietplan-2jgg.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://dietplan-2jgg.onrender.com"
       - key: DB_NAME
         sync: false
       - key: DB_USER
