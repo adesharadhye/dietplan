@@ -12,6 +12,13 @@ nav { height: 80px; display: flex; align-items: center; justify-content: space-b
 .brand { display: flex; align-items: center; gap: 10px; font-family: "Playfair Display"; font-size: 23px; color: #183b2a; text-decoration: none; }
 .brand span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50% 50% 45% 55%; background: #dce9cf; font-size: 0; }
 .brand span::after { content: "⌁"; font-size: 26px; transform: rotate(-25deg); }
+.live-clock {
+  margin-left: auto;
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
 .nav-actions { display: flex; gap: 28px; align-items: center; }
 .nav-actions a { color: #365144; text-decoration: none; font-size: 14px; }
 .nav-actions .login { border: 1px solid #b9c4bb; padding: 10px 18px; border-radius: 999px; }

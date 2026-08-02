@@ -13,6 +13,7 @@ const slotDetails = {
 };
 
 function App() {
+  const [currentTime, setCurrentTime] = useState(new Date());
   // Meal-plan data and the current API loading/authentication state.
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -93,6 +94,15 @@ function App() {
   // Initialize account and planner data when the app first mounts.
   useEffect(() => {
     loadPlans();
+  }, []);
+
+  // Keep the navigation clock synchronized with the visitor's local time.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   // Guests must authenticate before opening the meal editor.
@@ -343,6 +353,9 @@ function App() {
       {/* Global navigation changes controls with session state. */}
       <nav>
         <a className="brand" href="/"><span>N</span>Nourish</a>
+        <div className="live-clock" role="timer" aria-live="off">
+          {currentTime.toLocaleTimeString()}
+        </div>
         <div className="nav-actions">
           <a href="#plans">My plans</a>
           {authenticated ? (
@@ -354,6 +367,7 @@ function App() {
               <button className="signup-link account" type="button" onClick={openSignup}>Sign up</button>
               <button className="login account" type="button" onClick={() => setShowLogin(true)}>Log in</button>
             </>
+            
           )}
         </div>
       </nav>

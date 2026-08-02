@@ -17,10 +17,10 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEBUG = True
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
+SECURE_SSL_REDIRECT = False
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config(
     'SECRET_KEY',
@@ -28,9 +28,10 @@ SECRET_KEY = config(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['dietplan-2jgg.onrender.com']
+ALLOWED_HOSTS = ['dietplan-2jgg.onrender.com',
+                 '127.0.0.1',
+                'localhost',]
 CSRF_TRUSTED_ORIGINS = ['https://dietplan-2jgg.onrender.com']
 
 if not DEBUG:
@@ -167,8 +168,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SESSION_COOKIES_AGE = 30 *60
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
 SESSION_COOKIES_SECURE = True
 
 SESSION_COOKIES_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
+
